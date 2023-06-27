@@ -1,0 +1,3 @@
+Realiza un pequeño shader (como material en Godot) que, usando los algoritmos que vimos en clases de Bump Mapping, calcula la normal para cada uno de los téxeles de una textura en un plano. Puedes usar la definición de la derivada u operaciones de convolución mediante máscaras.
+
+Para entregarlo, puedes adjuntar el fichero del material o copiar el código del shader directamente en el texto de esta tarea.

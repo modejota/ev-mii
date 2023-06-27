@@ -1,0 +1,23 @@
+Escribe el pseudocódigo de un objeto Singleton (por ejemplo teniendo en mente los Autoload de Godot) que permita gestionar un ECS. Para ello:
+
+Define tres componentes distintos.
+Define dos sistemas diferentes. El primer sistema trataría el comportamiento de dos de los componentes anteriores y el segundo sistema el comportamiento del tercer componente.
+A modo de ejemplo, define varias entidades que ganen y pierdan componentes a lo largo del tiempo dentro del entorno.
+Explica qué señales que habría que tener y dónde, qué grupos tendríamos y qué métodos tendría nuestro singleton. También explica que tipo de estructura necesitamos para cada entidad y sistema.
+
+Ten en cuenta que no hay una única solución correcta, pero hay soluciones incorrectas. Usa un ejemplo distinto al de las diapositivas de clase.
+
+Para este ejercicio utiliza la siguiente plantilla:
+1. Mis tres componentes son:
+2. Mis entidades se representan computacionalmente como:
+3. Mis componentes se representan computacionalmente como:
+4. Mis sistemas se representan computacionalmente como:
+5. Las estructuras empleadas son:
+- Nodos: ...
+- Scripts: ...
+- Métodos: ...
+...
+6. El pseudo algoritmo que uniría las estructuras del punto 5 sería el siguiente:
+7. Dadas estas entidades: _______________________, el ejemplo de funcionamiento sería el siguiente:
+
+Para este ejemplo (punto 7) , ten en cuenta que las entidades se crearán y destruirán de forma dinámica en el mundo, y que también será dinámica la asignación de componentes a las entidades (todo según la interacción del usuario en tiempo real). Indica en el ejemplo como afecta el cambio de asignación de componentes en las entidades a los sistemas propuestos.

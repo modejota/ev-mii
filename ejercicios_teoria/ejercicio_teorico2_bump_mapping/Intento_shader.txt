@@ -1,0 +1,25 @@
+shader_type spatial;
+render_mode cull_back;
+
+uniform sampler2D height_map;
+
+void fragment() {
+    // Obtener la posición del fragmento en coordenadas del mundo
+    vec4 world_pos = WORLD_MATRIX * vec4(VERTEX, 1.0);
+
+    // Obtener el color del mapa de alturas en la posición del fragmento
+    float height = texture(height_map, UV).r;
+
+    // Calcular la normal a partir de las derivadas de la altura
+    vec2 texel_size = vec2(1.0/TEXTURE_PIXEL_SIZE(height_map, 0));
+    float dHdx = texture(height_map, UV + vec2(texel_size.x, 0)).r - height;
+    float dHdy = texture(height_map, UV + vec2(0, texel_size.y)).r - height;
+    vec3 normal = normalize(vec3(-dHdx, -dHdy, 1.0));
+
+    // Transformar la normal a coordenadas del mundo
+    normal = normalize((WORLD_MATRIX * vec4(normal, 0.0)).xyz - (WORLD_MATRIX * vec4(0.0, 0.0, 0.0, 1.0)).xyz);
+
+    // Emitir el fragmento con la normal mapeada
+    NORMAL = normal;
+
+}

@@ -1,0 +1,8 @@
+Aprovechando el conocimiento adquirido en las prácticas 3 y 4, plantea a nivel teórico el movimiento de cámara con ratón en Godot en primera persona (FPV).
+
+Una vez planteada la cámara, describe cómo se implementaría una tecla de salto para la cámara de primera persona sin utilizar un motor de física (en base simplemente a transformaciones de traslación).
+
+Para ello, estudia el movimiento de tiro parabólico y describe qué factores de fuerzas tendrías en cuenta para simularlo en Godot (masa del personaje, fuerzas de resistencia, etc.):
+https://en.wikipedia.org/wiki/Projectile_motion
+
+Justifica tu respuesta. Se recomienda apoyarse en esquemas y pseudocódigo para describir tanto el algoritmo como las fórmulas a emplear.

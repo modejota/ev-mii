@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Orange-bumpmap.png" type="Texture" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial;
+
+uniform sampler2D texture;
+uniform float strength; // Rango [0, 1]
+
+void fragment() {
+	// Calcular tamaño del texel
+	ivec2 texture_size = textureSize(texture, 0);
+	vec2 texel_size = vec2(1.0 / float(texture_size.x), 1.0 / float(texture_size.y));
+	
+	// Calcular derivadas
+    float color = texture(texture, UV).r;	
+    float color_x_vecino = texture(texture, UV - vec2(texel_size.x, 0.0)).r; // Derivada en X
+    float color_y_vecino = texture(texture, UV - vec2(0.0, texel_size.y)).r; // Derivada en Y
+	
+	// Conformar nueva normal y normalizar
+    NORMAL =  normalize(vec3(color_x_vecino, color_y_vecino, 1.0-strength));
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/strength = 0.0
+shader_param/texture = ExtResource( 1 )
+
+[sub_resource type="Environment" id=4]
+
+[node name="Ejercicio2" type="Spatial"]
+
+[node name="Plano" type="CSGMesh" parent="."]
+mesh = SubResource( 1 )
+material = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 2, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )

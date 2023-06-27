@@ -1,0 +1,5 @@
+Crea los arrays necesarios para dibujar las caras de un cubo, tanto de vértices como de caras. Para ello, revisa el tutorial de Godot para crear geometría (https://docs.godotengine.org/en/stable/tutorials/3d/procedural_geometry/index.html), puedes ignorar las normales (normals) y las coordenadas de textura (UV).
+
+Introduce el código en un nodo de Godot del tipo que consideres más apropiado, y sube directamente el contenido del fichero del código de GDScript en esta tarea.
+
+Se valorará especialmente la atención a las restricciones vistas en clase y la eficiencia de las estructuras creadas.
