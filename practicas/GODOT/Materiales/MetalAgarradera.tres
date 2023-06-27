@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://GODOT/Texturas/Metal011/Metal011_1K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://GODOT/Texturas/Metal011/Metal011_1K_Roughness.jpg" type="Texture" id=3]
+
+[resource]
+albedo_color = Color( 0.854902, 0.843137, 0.843137, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.35
+metallic_specular = 0.1
+roughness = 0.6
+roughness_texture = ExtResource( 3 )
+anisotropy_enabled = true
+anisotropy = 0.0
+uv1_scale = Vector3( 2, 2, 2 )
+uv1_triplanar = true
+uv2_triplanar = true

@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://GODOT/Texturas/Metal046A/Metal046A_1K_NormalGL.png" type="Texture" id=1]
+[ext_resource path="res://GODOT/Texturas/Metal046A/Metal046A_1K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://GODOT/Texturas/Metal046A/Metal046A_1K_Roughness.jpg" type="Texture" id=3]
+
+[resource]
+albedo_color = Color( 0.364706, 0.262745, 0.262745, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.1
+metallic_specular = 0.1
+roughness = 0.5
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource( 1 )
+uv1_triplanar = true

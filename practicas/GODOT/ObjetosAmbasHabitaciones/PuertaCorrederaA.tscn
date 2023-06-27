@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://BLENDER/Exportados/PuertaCorrederaA.glb" type="PackedScene" id=1]
+[ext_resource path="res://GODOT/Scripts/AbrirPuertasTecla.gd" type="Script" id=2]
+[ext_resource path="res://GODOT/Materiales/MetalPuerta.tres" type="Material" id=3]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.405227, 1, 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "AbrirPuerta"
+length = 2.5
+tracks/0/type = "transform"
+tracks/0/path = NodePath("PuertaB")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0572659, 1.49946, 3.31858, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.0666667, 1, -0.0572659, 1.49946, 3.31995, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.133333, 1, -0.0572659, 1.49946, 3.31949, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.2, 1, -0.0572659, 1.49946, 3.31059, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.266667, 1, -0.0572659, 1.49946, 3.29151, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.333333, 1, -0.0572659, 1.49946, 3.26115, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.4, 1, -0.0572659, 1.49946, 3.21418, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.466667, 1, -0.0572659, 1.49946, 3.14858, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.533333, 1, -0.0572659, 1.49946, 3.05619, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.6, 1, -0.0572659, 1.49946, 2.92418, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.666667, 1, -0.0572659, 1.49946, 2.73613, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.733333, 1, -0.0572659, 1.49946, 2.42338, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.866667, 1, -0.0572659, 1.49946, 1.24961, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 0.933333, 1, -0.0572659, 1.49946, 0.910189, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 1, 1, -0.0572659, 1.49946, 0.741708, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 1.06667, 1, -0.0572659, 1.49946, 0.659683, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36, 2.5, 1, -0.0572659, 1.49946, -0.376134, 0.5, -0.5, 0.5, 0.5, 0.36, 0.36, 0.36 )
+
+[node name="PuertaCorrederaA" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PuertaB" parent="." index="0"]
+transform = Transform( 0, -0.36, 0, 0, 0, -0.36, 0.36, 0, 0, -0.0572659, 1.49946, 3.31858 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="PuertaB" index="0"]
+transform = Transform( 1.65568e-07, -9.86865e-15, 2.77778, -2.77778, 1.65568e-07, -9.86865e-15, 9.86865e-15, -2.77778, 1.65568e-07, -9.21828, -0.159072, 4.16516 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PuertaB/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 3.00087, 0, 0, 0, 1, 0, 0, 1.33 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/AbrirPuerta = SubResource( 3 )

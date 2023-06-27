@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BLENDER/Exportados/Silla_CGTRADER.glb" type="PackedScene" id=1]
+[ext_resource path="res://GODOT/Materiales/MetalAzulito.tres" type="Material" id=2]
+[ext_resource path="res://GODOT/Materiales/MetalRojizo.tres" type="Material" id=3]
+
+[node name="Silla_CGTRADER" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71744, 0, 0.510025 )
+
+[node name="C LEG 001" parent="." index="0"]
+material/0 = ExtResource( 3 )
+
+[node name="C LEG 002" parent="." index="1"]
+material/0 = ExtResource( 3 )
+
+[node name="SEAT" parent="." index="2"]
+material/0 = ExtResource( 2 )

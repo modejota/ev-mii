@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GODOT/Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://GODOT/Scripts/InteractRay.gd" type="Script" id=2]
+[ext_resource path="res://GODOT/crosshair.png" type="Texture" id=3]
+[ext_resource path="res://GODOT/DS9_Credits.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[node name="Player" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 3, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Rotation_Helper" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="Camera" type="Camera" parent="Rotation_Helper"]
+current = true
+
+[node name="ManoAux" type="Position3D" parent="Rotation_Helper"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, -4 )
+
+[node name="InteractRay" type="RayCast" parent="Rotation_Helper"]
+enabled = true
+cast_to = Vector3( 0, 0, -12 )
+script = ExtResource( 2 )
+
+[node name="MensajeInteractuar" type="Label" parent="Rotation_Helper/InteractRay"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -43.5
+margin_bottom = 43.5
+custom_fonts/font = SubResource( 2 )
+text = "Message
+
+[Key]"
+align = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
