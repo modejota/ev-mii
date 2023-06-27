@@ -3,10 +3,10 @@ Proyecto para la asignatura "Entornos Virtuales" del Máster en Ingeniería Info
 
 ## Ejercicios de teoría
 
-- E1.
-- E2.
-- E3.
-- E4.
+- E1. Creación de un cubo de forma procedural.
+- E2. Estudio de shader de materiales.
+- E3. Estudio de un sistema ECS en Godot.
+- E4. Estudio del funcionamiento de una cámara FPS y salto.
 
 ## Prácticas
 
